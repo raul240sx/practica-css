@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&display=swap');
+/* reset de css a html */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html body {
+    height: 100%;
+}
+
+body {
+    font-family: "Bungee Spice";
+    font-size: 1.2em;
+    min-height: 100%;
+}
+
+/*hasta ac{a siempre se hace lo mismo*/
+
+.contenedor > * {    /* el simbol > significa que aplica a algo, en conjunto con el asterisco significa que aplica a todo. tambien puede ser a una sola parte, en este caso por ejemplo > aside y solo aplicaría al aside */
+    box-shadow: -1px 1px 0px rgba(0, 0, 0, 0.75);
+    text-align: center;
+    padding: 50px;
+    border-radius: 8px;
+}
+
+.header {
+    grid-area: header;
+    background-color: aqua;
+}
+.nav {
+    grid-area: nav;
+    background-color: red;
+}
+.aside {
+    grid-area: aside;
+    background-color: blueviolet;
+}
+.article {
+    grid-area: article;
+    background-color: grey;
+}
+.footer {
+    grid-area: footer;
+    background-color: green;
+}
+
+
+.contenedor {
+    display: grid;
+    gap: 10px;
+    grid-template:
+        "header" 100px
+        "nav" 100px
+        "article"  auto  /* con auto va a ocupar todo el tamaño que sobre*/
+        "aside" 100px
+        "footer" 100px;   /* recordar el punto y coma al final*/
+}
+
+@media (min-width:600px){
+    .contenedor{
+        grid-template:
+        "header  header" 100px
+        "nav  nav" 100px
+        "aside article" auto
+        "footer  footer" 100px;
+    }
+}
+
+
